@@ -1,16 +1,16 @@
 import { z } from "zod";
-import { ItemStat } from "./stats";
+import { ItemStatSchema } from "./stats";
 
-const statsRecord = z.record(ItemStat, z.number());
+const statsRecord = z.record(ItemStatSchema, z.number());
 
 const statValueArray = z.array(
   z.object({
-    stat: ItemStat,
+    stat: ItemStatSchema,
     value: z.number(),
   })
 );
 
-export const Item = z
+export const ItemSchema = z
   .object({
     id: z.number(),
     pos: z.number(),
@@ -48,7 +48,7 @@ export const Item = z
     implicitStats: statValueArray,
     requires: z.array(
       z.object({
-        stat: ItemStat.or(z.array(ItemStat)),
+        stat: ItemStatSchema.or(z.array(ItemStatSchema)),
         value: z.number(),
       })
     ),
@@ -161,4 +161,4 @@ export const Item = z
   })
   .partial();
 
-export type Item = z.infer<typeof Item>;
+export type Item = z.infer<typeof ItemSchema>;

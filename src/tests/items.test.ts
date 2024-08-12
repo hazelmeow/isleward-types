@@ -1,4 +1,4 @@
-import { Item } from "../items";
+import { ItemSchema } from "../items";
 import { replaceNullWithUndefined } from "../utils";
 import { describe, test } from "vitest";
 
@@ -11,6 +11,6 @@ describe("item test cases", () => {
 
   test.each(itemCases)("should parse case %i", (idx, item) => {
     const itemWithoutNulls = replaceNullWithUndefined(item);
-    Item.strict().parse(itemWithoutNulls);
+    ItemSchema.strict().parse(itemWithoutNulls);
   });
 });

@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const ItemStat = z.enum([
+export const ItemStatSchema = z.enum([
   "vit",
   "regenHp",
   "manaMax",
@@ -50,7 +50,9 @@ export const ItemStat = z.enum([
   "fishItems",
 ]);
 
-export const StatValue = z.enum([
+export type ItemStat = z.infer<typeof ItemStatSchema>;
+
+export const StatSchema = z.enum([
   "mana",
   "manaMax",
   "manaReservePercent",
@@ -111,4 +113,4 @@ export const StatValue = z.enum([
   "fishItems",
 ]);
 
-export type StatValue = z.infer<typeof StatValue>;
+export type Stat = z.infer<typeof StatSchema>;
