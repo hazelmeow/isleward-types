@@ -48,6 +48,8 @@ export const ItemStatSchema = z.enum([
   "fishRarity",
   "fishWeight",
   "fishItems",
+  "addAttackDamage",
+  "addSpellDamage",
 ]);
 
 export type ItemStat = z.infer<typeof ItemStatSchema>;
@@ -111,6 +113,8 @@ export const StatSchema = z.enum([
   "fishRarity",
   "fishWeight",
   "fishItems",
+  "addAttackDamage",
+  "addSpellDamage",
 ]);
 
 export type Stat = z.infer<typeof StatSchema>;
