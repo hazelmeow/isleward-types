@@ -11,7 +11,8 @@
     "build": "preconstruct build",
     "lint": "eslint",
     "test": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+	"prepare": "pnpm build"
   },
   "dependencies": {
     "zod": "^3.23.8"
